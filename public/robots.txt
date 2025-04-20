@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+# Host: https://qybrrlabs.com # Update with your production URL
+
+# Sitemaps
+Sitemap: https://qybrrlabs.com/sitemap.xml # Update with your production URL
