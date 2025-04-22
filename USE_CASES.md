@@ -9,28 +9,28 @@ This document outlines the primary use cases for the **QybrrLabs** blog platform
 
 ## 2. Actors
 
-*   **Content Editor/Admin:** Responsible for creating, managing, and publishing content using the Sanity Studio.
-*   **Blog Reader:** Visits the public website to consume blog content.
+- **Content Editor/Admin:** Responsible for creating, managing, and publishing content using the Sanity Studio.
+- **Blog Reader:** Visits the public website to consume blog content.
 
 ## 3. Content Editor Use Cases (Sanity Studio)
 
-*(Precondition: Content Editor has access credentials and logs into the Sanity Studio, typically at `/studio` path or `localhost:3333`)*
+_(Precondition: Content Editor has access credentials and logs into the Sanity Studio, typically at `/studio` path or `localhost:3333`)_
 
 **UC-ED-01: Create New Blog Post**
 
 1.  Navigate to the "Post" section in the Sanity Studio Desk.
 2.  Click "Create new" or similar action.
 3.  Fill in the required fields:
-    *   Title
-    *   Slug (auto-generates from Title, can be edited)
-    *   Author (Select from existing Authors via reference)
-    *   Main Image (Upload or select image, set Alt Text, define Hotspot)
-    *   Categories (Select one or more from existing Categories via reference)
-    *   Published At (Defaults to now, can be set)
-    *   Body (Use the Portable Text editor to add text, headings, lists, images, code blocks, embeds, tables).
+    - Title
+    - Slug (auto-generates from Title, can be edited)
+    - Author (Select from existing Authors via reference)
+    - Main Image (Upload or select image, set Alt Text, define Hotspot)
+    - Categories (Select one or more from existing Categories via reference)
+    - Published At (Defaults to now, can be set)
+    - Body (Use the Portable Text editor to add text, headings, lists, images, code blocks, embeds, tables).
 4.  Fill in optional fields:
-    *   Excerpt
-    *   Mark as Featured (Boolean checkbox)
+    - Excerpt
+    - Mark as Featured (Boolean checkbox)
 5.  Save Draft.
 6.  Click "Publish".
 
@@ -60,17 +60,17 @@ This document outlines the primary use cases for the **QybrrLabs** blog platform
 
 1.  Navigate to the "Settings" section (likely a singleton document).
 2.  Modify fields such as:
-    *   Site Title
-    *   Site Description
-    *   Site URL
-    *   Logos (Light/Dark)
-    *   Open Graph Image
-    *   Copyright holder name
+    - Site Title
+    - Site Description
+    - Site URL
+    - Logos (Light/Dark)
+    - Open Graph Image
+    - Copyright holder name
 3.  Publish changes.
 
 ## 4. Blog Reader Use Cases (Public Website)
 
-*(Precondition: Reader accesses the public website URL)*
+_(Precondition: Reader accesses the public website URL)_
 
 **UC-READ-01: Visit Homepage**
 
@@ -121,4 +121,4 @@ This document outlines the primary use cases for the **QybrrLabs** blog platform
 **UC-READ-09: View Contact Page**
 
 1.  Click on the "Contact" link in the main menu.
-2.  View contact information or interact with a contact form (if implemented). 
+2.  View contact information or interact with a contact form (if implemented).

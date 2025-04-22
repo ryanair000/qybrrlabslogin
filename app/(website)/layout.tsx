@@ -10,9 +10,7 @@ async function sharedMetaData(params) {
     // enable this for resolving opengraph image
     // metadataBase: new URL(settings.url),
     title: {
-      default:
-        settings?.title ||
-        "QybrrLabs - Blog",
+      default: settings?.title || "QybrrLabs - Blog",
       template: "%s | QybrrLabs"
     },
     description:
