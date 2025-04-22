@@ -34,11 +34,11 @@ export default function Post(props) {
             <CategoryLabel categories={post.categories} />
           </div>
 
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
+          <h1 className="text-brand-primary mb-4 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
             {post.title}
           </h1>
 
-          <div className="mt-3 flex justify-center space-x-3 text-gray-500 ">
+          <div className="mt-3 flex items-center justify-center space-x-3 text-gray-500 ">
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 flex-shrink-0">
                 {AuthorimageProps && (
@@ -53,13 +53,13 @@ export default function Post(props) {
                   </Link>
                 )}
               </div>
-              <div>
-                <p className="text-gray-800 dark:text-gray-400">
+              <div className="flex items-center text-sm">
+                <span className="text-gray-800 dark:text-gray-400">
                   <Link href={`/author/${post.author.slug.current}`}>
                     {post.author.name}
                   </Link>
-                </p>
-                <div className="flex items-center space-x-2 text-sm">
+                </span>
+                <span className="ml-2 flex items-center space-x-2">
                   <time
                     className="text-gray-500 dark:text-gray-400"
                     dateTime={post?.publishedAt || post._createdAt}>
@@ -68,8 +68,8 @@ export default function Post(props) {
                       "MMMM dd, yyyy"
                     )}
                   </time>
-                  <span>· {post.estReadingTime || "5"} min read</span>
-                </div>
+                  <span className="text-gray-500 dark:text-gray-400">· {post.estReadingTime || "5"} min read</span>
+                </span>
               </div>
             </div>
           </div>
