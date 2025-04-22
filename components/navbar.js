@@ -42,7 +42,7 @@ export default function Navbar(props) {
 
   return (
     <Container>
-      <nav className="py-8">
+      <nav className="py-4">
         <Disclosure>
           {({ open }) => (
             <>
