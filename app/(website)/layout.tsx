@@ -51,7 +51,7 @@ export default async function Layout({ children, params }) {
     <>
       <Navbar {...settings} />
 
-      <div className="mt-8">{children}</div>
+      <div className="mt-4">{children}</div>
 
       <Footer {...settings} />
     </>
