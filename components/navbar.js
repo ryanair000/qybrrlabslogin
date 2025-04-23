@@ -20,10 +20,6 @@ export default function Navbar(props) {
 
   const rightmenu = [
     {
-      label: "All Posts",
-      href: "/archive"
-    },
-    {
       label: "Tools",
       href: "/tools"
     },
@@ -40,10 +36,6 @@ export default function Navbar(props) {
       href: "/shop"
     },
     {
-      label: "Sign Up",
-      href: "/signup"
-    },
-    {
       label: "Login",
       href: "/login",
       isButton: true
@@ -58,8 +50,8 @@ export default function Navbar(props) {
         <Disclosure>
           {({ open }) => (
             <>
-              <div className="flex flex-wrap items-center justify-between md:flex-nowrap md:gap-10">
-                <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
+              <div className="relative flex flex-wrap items-center justify-between md:flex-nowrap md:gap-10">
+                <div className="order-1 hidden w-auto flex-col items-center justify-start md:order-1 md:flex md:flex-row md:justify-start">
                   {leftmenu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (
@@ -81,7 +73,7 @@ export default function Navbar(props) {
                     </Fragment>
                   ))}
                 </div>
-                <div className="flex w-full items-center justify-between md:w-auto">
+                <div className="order-2 flex w-full items-center justify-between md:order-2 md:w-auto md:flex-initial">
                   <Link href="/" className="w-28 dark:hidden">
                     {props.logo ? (
                       <Image
@@ -134,7 +126,7 @@ export default function Navbar(props) {
                   </Disclosure.Button>
                 </div>
 
-                <div className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
+                <div className="order-3 hidden w-auto flex-col items-center justify-start md:order-3 md:flex md:flex-row md:justify-end">
                   {rightmenu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (

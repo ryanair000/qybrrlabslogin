@@ -9,13 +9,21 @@ export default function Footer(props) {
         <p className="text-sm text-gray-600 dark:text-gray-400">
           Copyright © {new Date().getFullYear()} {props?.copyright}. All rights reserved.
         </p>
-        <div className="mt-2 flex justify-center gap-4 text-sm">
+        <div className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
           <Link href="/about" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
             About
           </Link>
           <span className="text-gray-400 dark:text-gray-600">|</span>
           <Link href="/contact" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
             Contact
+          </Link>
+          <span className="text-gray-400 dark:text-gray-600">|</span>
+          <Link href="/archive" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+            All Posts
+          </Link>
+          <span className="text-gray-400 dark:text-gray-600">|</span>
+          <Link href="/signup" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+            Sign Up
           </Link>
         </div>
       </div>
