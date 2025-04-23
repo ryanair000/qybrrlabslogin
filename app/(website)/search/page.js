@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { fetchPostsBySearchQuery } from "@/lib/sanity/groq";
-import PostList from "@/components/post-list";
+import PostList from "@/components/postlist";
 import Container from "@/components/container";
 
 async function SearchResults({ query }) {
