@@ -38,7 +38,7 @@ export default function SearchPage({ searchParams }) {
   return (
     <Container>
       <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-yellow-300 lg:text-4xl lg:leading-snug">
-        Search Results for "{query}"
+        Search Results for &quot;{query}&quot;
       </h1>
       <Suspense fallback={<p className="text-center">Loading search results...</p>}>
         <SearchResults query={query} />
