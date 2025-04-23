@@ -32,6 +32,10 @@ export default function Navbar(props) {
       href: "/archive"
     },
     {
+      label: "Shop",
+      href: "/shop"
+    },
+    {
       label: "Sign Up",
       href: "/signup"
     },
