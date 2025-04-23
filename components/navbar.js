@@ -15,21 +15,21 @@ export default function Navbar(props) {
     {
       label: "Home",
       href: "/"
-    },
-    {
-      label: "About",
-      href: "/about"
-    },
-    {
-      label: "Contact",
-      href: "/contact"
     }
   ];
 
   const rightmenu = [
     {
-      label: "Archive",
+      label: "All Posts",
       href: "/archive"
+    },
+    {
+      label: "Tools",
+      href: "/tools"
+    },
+    {
+      label: "Latest News",
+      href: "/news"
     },
     {
       label: "Pricing",
