@@ -22,7 +22,7 @@ export default function Post({ posts }) {
               Where AI Meets Real-World Impact
             </h1>
             <p className="mb-6 text-lg text-indigo-100 md:text-xl">
-              At QybrrLabs, we don't just talk about artificial intelligence—we build it, test it, and put it to work. This blog is your backstage pass to how AI is solving actual problems, minus the hype.
+              At QybrrLabs, we don&apos;t just talk about artificial intelligence—we build it, test it, and put it to work. This blog is your backstage pass to how AI is solving actual problems, minus the hype.
             </p>
             <Link
               href="/archive"
