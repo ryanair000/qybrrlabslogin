@@ -9,6 +9,7 @@ import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { myLoader } from "@/utils/all";
+import SearchInput from "@/components/ui/search";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -126,7 +127,10 @@ export default function Navbar(props) {
                   </Disclosure.Button>
                 </div>
 
-                <div className="order-3 hidden w-auto flex-col items-center justify-start md:order-3 md:flex md:flex-row md:justify-end">
+                <div className="order-3 hidden w-auto flex-col items-center justify-start md:order-3 md:flex md:flex-row md:items-center md:justify-end">
+                  <form action="/search" method="GET" className="mr-4">
+                    <SearchInput placeholder="Search posts..." />
+                  </form>
                   {rightmenu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (
@@ -159,6 +163,11 @@ export default function Navbar(props) {
               </div>
               <Disclosure.Panel>
                 <div className="order-2 -ml-4 mt-4 flex w-full flex-col items-center justify-start md:hidden">
+                  <div className="mt-2 w-full px-5">
+                    <form action="/search" method="GET">
+                      <SearchInput placeholder="Search posts..." />
+                    </form>
+                  </div>
                   {mobilemenu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (

@@ -35,7 +35,7 @@ export default function Post({ posts }) {
           {/* Image Content - Adjusted for single image */}
           <div className="relative mt-8 h-64 md:mt-0 md:h-full">
             <Image
-              src="/img/ai-featured.jpg" // Path to your image in public/img/
+              src="/img/robot-ai-automation-artificial-intelligence-ai-futuristic_10221-22832.jpg" // Path to your image in public/img/
               alt="AI Featured Image"
               fill
               priority
