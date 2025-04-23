@@ -31,6 +31,15 @@ export default function Navbar(props) {
       label: "Archive",
       href: "/archive"
     },
+    {
+      label: "Sign Up",
+      href: "/signup"
+    },
+    {
+      label: "Login",
+      href: "/login",
+      isButton: true
+    }
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];
@@ -41,7 +50,7 @@ export default function Navbar(props) {
         <Disclosure>
           {({ open }) => (
             <>
-              <div className="flex flex-wrap justify-between md:flex-nowrap md:gap-10">
+              <div className="flex flex-wrap items-center justify-between md:flex-nowrap md:gap-10">
                 <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
                   {leftmenu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
@@ -55,7 +64,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-6 py-2 text-base font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="relative px-6 py-2 text-lg font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400 after:absolute after:bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-indigo-600 after:transition-all after:duration-300 after:ease-out hover:after:w-full"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.label}
@@ -74,7 +83,7 @@ export default function Navbar(props) {
                         sizes="(max-width: 640px) 100vw, 200px"
                       />
                     ) : (
-                      <span className="block text-center tracking-widest">
+                      <span className="block text-center text-xl font-semibold tracking-widest">
                         QybrrLabs
                       </span>
                     )}
@@ -88,7 +97,7 @@ export default function Navbar(props) {
                         sizes="(max-width: 640px) 100vw, 200px"
                       />
                     ) : (
-                      <span className="block text-center tracking-widest">
+                      <span className="block text-center text-xl font-semibold tracking-widest">
                         QybrrLabs
                       </span>
                     )}
@@ -130,7 +139,10 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-6 py-2 text-base font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className={ item.isButton
+                              ? "ml-4 rounded-md border border-gray-300 px-4 py-1 text-lg font-medium text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+                              : "relative px-6 py-2 text-lg font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400 after:absolute after:bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-indigo-600 after:transition-all after:duration-300 after:ease-out hover:after:w-full"
+                            }
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           <span> {item.label}</span>
