@@ -15,10 +15,7 @@ export default function Navbar(props) {
     {
       label: "Home",
       href: "/"
-    }
-  ];
-
-  const rightmenu = [
+    },
     {
       label: "Tools",
       href: "/tools"
@@ -26,7 +23,10 @@ export default function Navbar(props) {
     {
       label: "Latest News",
       href: "/news"
-    },
+    }
+  ];
+
+  const rightmenu = [
     {
       label: "Pricing",
       href: "/pricing"

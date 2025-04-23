@@ -16,21 +16,19 @@ export default function Post({ posts }) {
           {/* Text Content */}
           <div className="z-10">
             <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-indigo-100">
-              Featured Story
+              Welcome to QybrrLabs
             </p>
             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-white md:text-4xl lg:text-5xl">
-              {/* Placeholder Title - Update with actual title later */}
-              Exploring the Frontiers of AI
+              Where AI Meets Real-World Impact
             </h1>
             <p className="mb-6 text-lg text-indigo-100 md:text-xl">
-              {/* Placeholder Description - Update later */}
-              Dive deep into the latest advancements and ethical considerations shaping the future of artificial intelligence.
+              At QybrrLabs, we don't just talk about artificial intelligence—we build it, test it, and put it to work. This blog is your backstage pass to how AI is solving actual problems, minus the hype.
             </p>
             <Link
-              href="#" // TODO: Link to the actual featured post
+              href="/archive"
               className="inline-block rounded-md bg-white px-6 py-3 text-base font-medium text-indigo-600 shadow-md transition duration-300 ease-in-out hover:bg-gray-100"
             >
-              Read Feature
+              Explore Posts
             </Link>
           </div>
 
