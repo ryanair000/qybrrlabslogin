@@ -12,7 +12,7 @@ export default function Post({ posts }) {
     <>
       <Container>
         {/* New Featured Section */}
-        <div className="relative mb-12 grid grid-cols-1 overflow-hidden rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 p-8 text-white shadow-lg md:grid-cols-2 md:items-center md:gap-8 md:p-12">
+        <div className="relative mb-12 grid grid-cols-1 overflow-hidden rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 p-8 text-white shadow-lg md:grid-cols-2 md:gap-8 md:p-12">
           {/* Text Content */}
           <div className="z-10">
             <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-purple-100">
