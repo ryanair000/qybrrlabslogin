@@ -12,21 +12,21 @@ export default function Post({ posts }) {
     <>
       <Container>
         {/* New Featured Section */}
-        <div className="relative mb-12 grid grid-cols-1 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 p-8 text-white shadow-lg md:grid-cols-2 md:items-center md:gap-8 md:p-12">
+        <div className="relative mb-12 grid grid-cols-1 overflow-hidden rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 p-8 text-white shadow-lg md:grid-cols-2 md:items-center md:gap-8 md:p-12">
           {/* Text Content */}
           <div className="z-10">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-indigo-100">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-purple-100">
               Welcome to QybrrLabs
             </p>
             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-white md:text-4xl lg:text-5xl">
               Where AI Meets Real-World Impact
             </h1>
-            <p className="mb-6 text-lg text-indigo-100 md:text-xl">
+            <p className="mb-6 text-lg text-purple-100 md:text-xl">
               At QybrrLabs, we don&apos;t just talk about artificial intelligence—we build it, test it, and put it to work. This blog is your backstage pass to how AI is solving actual problems, minus the hype.
             </p>
             <Link
               href="/archive"
-              className="inline-block rounded-md bg-white px-6 py-3 text-base font-medium text-indigo-600 shadow-md transition duration-300 ease-in-out hover:bg-gray-100"
+              className="inline-block rounded-md bg-white px-6 py-3 text-base font-medium text-purple-600 shadow-md transition duration-300 ease-in-out hover:bg-gray-100"
             >
               Explore Posts
             </Link>
