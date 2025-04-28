@@ -9,8 +9,5 @@ export default defineCliConfig({
   project: {
     basePath: "/studio"
   },
-  studio: {
-    // You can keep studio-specific config here if any
-  },
   studioHost: 'qybrr'
 });
