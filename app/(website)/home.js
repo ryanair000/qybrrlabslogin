@@ -36,9 +36,9 @@ export default function HomePage({ posts: initialPosts }) { // Receive posts as 
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 text-black">
                 Welcome to QybrrLabs, where innovation meets AI!
             </h1>
-              {/* Updated paragraph */}
+              {/* Updated paragraph with escaped apostrophes */}
               <p className="text-lg text-gray-700 mb-8">
-                We're all about building next-gen SaaS solutions that supercharge your business. Our team is pushing the boundaries of what's possible with artificial intelligence to create smart, scalable tools that make things faster, easier, and more efficient. Get ready to dive into the future of tech with us!
+                We&apos;re all about building next-gen SaaS solutions that supercharge your business. Our team is pushing the boundaries of what&apos;s possible with artificial intelligence to create smart, scalable tools that make things faster, easier, and more efficient. Get ready to dive into the future of tech with us!
               </p>
               {/* Changed button background to purple */}
               <a href="#" className="inline-block bg-purple-600 text-white px-5 py-2.5 rounded text-base font-medium hover:bg-purple-700 transition-colors">
