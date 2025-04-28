@@ -35,7 +35,7 @@ export default function HomePage({ posts: initialPosts }) { // Receive posts as 
               {/* Updated heading */}
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 text-black">
                 Welcome to QybrrLabs, where innovation meets AI!
-              </h1>
+            </h1>
               {/* Updated paragraph */}
               <p className="text-lg text-gray-700 mb-8">
                 We're all about building next-gen SaaS solutions that supercharge your business. Our team is pushing the boundaries of what's possible with artificial intelligence to create smart, scalable tools that make things faster, easier, and more efficient. Get ready to dive into the future of tech with us!
@@ -49,10 +49,10 @@ export default function HomePage({ posts: initialPosts }) { // Receive posts as 
             <Image
                 src="/ai.jpg" // Updated image path
                 alt="AI Hero Image" // Updated alt text
-                fill
+              fill
                 className="object-cover"
-                priority
-             />
+              priority
+            />
           </div>
         </section>
 
