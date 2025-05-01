@@ -28,9 +28,9 @@ export default function Header() {
             <Link href="/" className="text-sm font-medium text-gray-700 hover:text-purple-600">
               HOME
             </Link>
-            {/* Placeholder Dropdown Links */}
-            <a href="#" className="text-sm font-medium text-gray-700 hover:text-purple-600 flex items-center space-x-1">
-              <span>SOLUTIONS</span><span>&#x25BC;</span>
+            {/* Changed to link to homepage section */}
+            <a href="/#socio-product-section" className="text-sm font-medium text-gray-700 hover:text-purple-600 flex items-center space-x-1">
+              <span>SOLUTIONS</span>{/* Removed dropdown arrow */}
             </a>
             <a href="#" className="text-sm font-medium text-gray-700 hover:text-purple-600">
               DOCS
@@ -42,7 +42,7 @@ export default function Header() {
             <Link href="/products" className="text-sm font-medium text-gray-700 hover:text-purple-600">
               PRODUCTS
             </Link>
-            <Link href="/" className="text-sm font-medium text-gray-700 hover:text-purple-600">
+            <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-purple-600">
               BLOG
             </Link>
           </div>
