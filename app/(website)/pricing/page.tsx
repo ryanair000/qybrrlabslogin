@@ -1,123 +1,150 @@
-import Link from 'next/link';
+import React from 'react';
 
-// Simple Check Icon component
-const CheckIcon = () => (
-  <svg className="h-5 w-5 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-  </svg>
-);
+// Assuming Header/Footer are handled by the layout app/(website)/layout.tsx
 
 export default function PricingPage() {
-  const tiers = [
-    {
-      name: 'Free (Community)',
-      priceMonthly: 0,
-      priceYearly: 0,
-      description: 'Get started with our core content and community.',
-      features: [
-        'Weekly newsletter',
-        'Public blog posts',
-        'Basic AI tutorials',
-      ],
-      bestFor: 'Casual readers, Students',
-      cta: 'Get Started',
-      ctaLink: '/signup', // Link to sign up page
-      highlight: false,
-    },
-    {
-      name: 'Pro (Most Popular)',
-      priceMonthly: 29,
-      priceYearly: 249,
-      yearlyDiscount: '30% off',
-      description: 'Unlock exclusive content, insights, and community access.',
-      features: [
-        'All free features',
-        'Exclusive research reports',
-        'Live Q&A sessions',
-        'Private Discord access',
-        'Early beta access to new tools',
-      ],
-      bestFor: 'Tech leads, Startup founders, Professionals',
-      cta: 'Choose Pro',
-      ctaLink: '#', // Placeholder for payment link
-      highlight: true,
-    },
-    {
-      name: 'Enterprise (Custom)',
-      priceMonthly: 299, // Displaying monthly price for consistency, but focus is custom
-      priceYearly: 2999,
-      description: 'Tailored solutions and dedicated support for your organization.',
-      features: [
-        'All Pro features',
-        '1:1 strategy consultations',
-        'Custom AI use case development',
-        'White-label reports option',
-        'Priority support & team onboarding',
-      ],
-      bestFor: 'CTOs, Innovation teams, Agencies',
-      cta: 'Contact Us',
-      ctaLink: '/contact', // Link to contact page
-      highlight: false,
-    },
-  ];
-
   return (
-    <div className="bg-gray-50 py-12 dark:bg-gray-900">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-            Pricing Plans
-          </h1>
-          <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
-            QybrrLabs Insider Program - For Executives, Developers & AI Enthusiasts
-          </p>
-        </div>
+    // Commenting out original page content
+    <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+       <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-8 sm:text-4xl text-center">
+         Pricing
+       </h1>
+       <div className="text-center text-gray-500 py-10">
+         Pricing information is currently unavailable.
+       </div>
+    </main>
+    /*
+    <main className="bg-gradient-to-b from-purple-50 to-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <h1 className="text-4xl font-extrabold text-center text-gray-900 sm:text-5xl lg:text-6xl mb-6">
+          Simple, Transparent Pricing
+        </h1>
+        <p className="mt-5 max-w-xl mx-auto text-center text-xl text-gray-500 mb-16">
+          Choose the plan that's right for your needs. No hidden fees.
+        </p>
 
-        {/* Pricing Grid */}
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {tiers.map((tier) => (
-            <div
-              key={tier.name}
-              className={`flex flex-col rounded-2xl border ${tier.highlight ? 'border-indigo-500 ring-2 ring-indigo-500' : 'border-gray-200 dark:border-gray-700'} bg-white p-8 shadow-lg dark:bg-gray-800`}
-            >
-              <h3 className="text-lg font-semibold leading-6 text-gray-900 dark:text-white">{tier.name}</h3>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">{tier.description}</p>
-              <div className="mt-6">
-                <p className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  ${tier.priceMonthly}
-                  <span className="text-base font-medium text-gray-500 dark:text-gray-400">/mo</span>
-                </p>
-                {tier.priceYearly > 0 && tier.priceMonthly > 0 && (
-                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                    or ${tier.priceYearly}/yr
-                    {tier.yearlyDiscount && <span className="ml-1 font-medium text-indigo-600 dark:text-indigo-400">({tier.yearlyDiscount})</span>}
-                  </p>
-                )}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 items-stretch">
+          {/* Pricing Card 1: Free */}
+          <div className="flex flex-col rounded-lg border border-gray-200 bg-white shadow-lg overflow-hidden">
+            <div className="px-6 py-8 sm:p-10 sm:pb-6 flex-grow">
+              <div>
+                <h3 className="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-purple-100 text-purple-800">
+                  Free
+                </h3>
               </div>
-
-              <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex gap-x-3">
-                    <CheckIcon />
-                    {feature}
+              <div className="mt-4 flex items-baseline text-6xl font-extrabold text-gray-900">
+                $0
+                <span className="ml-1 text-2xl font-medium text-gray-500">/mo</span>
+              </div>
+              <p className="mt-5 text-lg text-gray-500">Perfect for getting started and exploring.</p>
+            </div>
+            <div className="flex-1 px-6 pt-6 pb-8 bg-gray-50 sm:p-10 sm:pt-6">
+              <ul role="list" className="space-y-4">
+                {[ 
+                  'Access to basic AI tools',
+                  '100 generations per month',
+                  'Community support'
+                ].map((feature) => (
+                  <li key={feature} className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg className="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="ml-3 text-base font-medium text-gray-500">{feature}</p>
                   </li>
                 ))}
               </ul>
-
-              <p className="mt-auto pt-6 text-xs font-semibold text-gray-500 dark:text-gray-400">
-                Best for: {tier.bestFor}
-              </p>
-
-              <Link
-                href={tier.ctaLink}
-                className={`mt-8 block w-full rounded-md px-3.5 py-2 text-center text-sm font-semibold leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${tier.highlight ? 'bg-indigo-600 text-white hover:bg-indigo-500 focus-visible:outline-indigo-600' : 'bg-white text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 dark:bg-gray-700 dark:text-white dark:ring-gray-600 dark:hover:ring-gray-500 dark:focus-visible:outline-gray-600'}`}
-              >
-                {tier.cta}
-              </Link>
             </div>
-          ))}
+             <div className="px-6 pb-8 sm:px-10">
+               <button className="mt-8 block w-full bg-gray-200 border border-transparent rounded-md py-3 px-6 text-base font-medium text-gray-700 hover:bg-gray-300">
+                  Current Plan
+                </button>
+             </div>
+          </div>
+
+          {/* Pricing Card 2: Pro */}
+          <div className="flex flex-col rounded-lg border-2 border-purple-600 bg-white shadow-xl overflow-hidden transform scale-105">
+            <div className="px-6 py-8 sm:p-10 sm:pb-6 flex-grow">
+              <div>
+                <h3 className="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-purple-100 text-purple-800">
+                  Pro
+                </h3>
+              </div>
+              <div className="mt-4 flex items-baseline text-6xl font-extrabold text-gray-900">
+                $19
+                <span className="ml-1 text-2xl font-medium text-gray-500">/mo</span>
+              </div>
+              <p className="mt-5 text-lg text-gray-500">Ideal for professionals and power users.</p>
+            </div>
+            <div className="flex-1 px-6 pt-6 pb-8 bg-gray-50 sm:p-10 sm:pt-6">
+              <ul role="list" className="space-y-4">
+                {[
+                  'Access to all AI tools',
+                  'Unlimited generations',
+                  'Priority email support',
+                  'Early access to new features'
+                ].map((feature) => (
+                  <li key={feature} className="flex items-start">
+                    <div className="flex-shrink-0">
+                       <svg className="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="ml-3 text-base font-medium text-gray-500">{feature}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+             <div className="px-6 pb-8 sm:px-10">
+               <button className="mt-8 block w-full bg-purple-600 border border-transparent rounded-md py-3 px-6 text-base font-medium text-white hover:bg-purple-700">
+                  Get Started
+                </button>
+             </div>
+          </div>
+
+          {/* Pricing Card 3: Enterprise */}
+          <div className="flex flex-col rounded-lg border border-gray-200 bg-white shadow-lg overflow-hidden">
+            <div className="px-6 py-8 sm:p-10 sm:pb-6 flex-grow">
+              <div>
+                <h3 className="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-gray-100 text-gray-800">
+                  Enterprise
+                </h3>
+              </div>
+              <div className="mt-4 flex items-baseline text-6xl font-extrabold text-gray-900">
+                Custom
+              </div>
+              <p className="mt-5 text-lg text-gray-500">For large teams and custom requirements.</p>
+            </div>
+            <div className="flex-1 px-6 pt-6 pb-8 bg-gray-50 sm:p-10 sm:pt-6">
+              <ul role="list" className="space-y-4">
+                 {[
+                  'Everything in Pro, plus:',
+                  'Dedicated account manager',
+                  'Custom integrations',
+                  'Volume discounts'
+                ].map((feature) => (
+                  <li key={feature} className="flex items-start">
+                    <div className="flex-shrink-0">
+                       <svg className="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="ml-3 text-base font-medium text-gray-500">{feature}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="px-6 pb-8 sm:px-10">
+               <button className="mt-8 block w-full bg-gray-200 border border-transparent rounded-md py-3 px-6 text-base font-medium text-gray-700 hover:bg-gray-300">
+                  Contact Sales
+                </button>
+             </div>
+          </div>
+
         </div>
       </div>
-    </div>
+    </main>
+    */
   );
 } 

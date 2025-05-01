@@ -35,9 +35,10 @@ export default function Header() {
             <a href="#" className="text-sm font-medium text-gray-700 hover:text-purple-600">
               DOCS
             </a>
-            <Link href="/pricing" className="text-sm font-medium text-gray-700 hover:text-purple-600">
+            {/* Comment out the Pricing link */}
+            {/* <Link href="/pricing" className="text-sm font-medium text-gray-700 hover:text-purple-600">
               PRICING
-            </Link>
+            </Link> */}
             <Link href="/products" className="text-sm font-medium text-gray-700 hover:text-purple-600">
               PRODUCTS
             </Link>
