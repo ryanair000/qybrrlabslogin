@@ -6,6 +6,16 @@ import { urlForImage } from "@/lib/sanity/image";
 import Header from "@/components/Header"; 
 import Footer from "@/components/Footer"; 
 import NewsletterSection from "@/components/NewsletterSection"; // Import the new component
+import { Analytics } from "@vercel/analytics/react";
+import { cx } from "@/utils/all";
+import { Inter, Fira_Code } from "next/font/google";
+import { draftMode } from 'next/headers';
+import { VisualEditing } from 'next-sanity';
+import LiveQueryProvider from 'next-sanity/preview';
+import { token, client } from "@/sanity/lib/client";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-fira-code" });
 
 // Remove the NewsletterSection function definition from here
 // function NewsletterSection() { ... }
@@ -54,22 +64,27 @@ export async function generateMetadata({ params }) {
 }
 
 // Main Layout (remains async server component)
-export default async function Layout({ children, params }) {
-  // const settings = await getSettings(); // Keep if needed by Footer/other server parts
+export default function WebsiteLayout({ children }: { children: React.ReactNode }) {
+  const isDraftMode = draftMode().isEnabled;
 
   return (
-    <>
-      <Header />
-      <main>{children}</main>
-      
-      {/* Render the Client Component for the Newsletter */}
-      {/* Provider might not be needed if hook doesn't require context */}
-      {/* Check Web3Forms docs if <Web3FormsProvider> is required */}
-      <NewsletterSection />
-      {/* </Web3FormsProvider> */}
-
-      <Footer /> 
-    </>
+    <html lang="en" className={cx(inter.variable, firaCode.variable, "scroll-smooth")}>
+      <body className="bg-white flex flex-col min-h-screen">
+        <Header />
+        <div className="flex-grow">
+          {isDraftMode ? (
+            <LiveQueryProvider client={client} token={token} logger={console}>
+              {children}
+            </LiveQueryProvider>
+          ) : (
+            children
+          )}
+        </div>
+        <Footer />
+        <Analytics />
+        {isDraftMode && <VisualEditing />}
+      </body>
+    </html>
   );
 }
 

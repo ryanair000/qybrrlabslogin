@@ -7,13 +7,18 @@
  * https://github.com/sanity-io/next-sanity
  */
 
-import Studio from "./studio";
+import { NextStudio } from 'next-sanity/studio';
 
-export const dynamic = "force-static";
+// Imports the config from the root directory
+import config from '../../../../sanity.config';
 
-export { metadata } from "next-sanity/studio/metadata";
-export { viewport } from "next-sanity/studio/viewport";
+// Ensure the Studio route is statically generated
+export const dynamic = 'force-static';
+
+// Exports the metadata and viewport directly from next-sanity/studio
+// This replaces the individual imports that caused the error
+export { metadata, viewport } from 'next-sanity/studio';
 
 export default function StudioPage() {
-  return <Studio />;
+  return <NextStudio config={config} />;
 }

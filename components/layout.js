@@ -7,7 +7,7 @@ import NavbarAlt from "@/components/navbaralt";
 import { cx } from "@/utils/all";
 // import defaultOG from "../public/img/og-default.jpg";
 
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 // import PopupWidget from "../components/popupWidget";
 
 export default function Layout(props) {

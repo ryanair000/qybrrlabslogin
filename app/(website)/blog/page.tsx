@@ -1,39 +1,17 @@
 import React from 'react';
-import { client } from "@/lib/sanity/client";
+import { client, sanityFetch } from "@/sanity/lib/client";
 import { urlForImage } from "@/lib/sanity/image";
 import Link from 'next/link';
 import Image from 'next/image';
-
-// --- Interfaces (Ensure these match your actual Sanity schema) ---
-interface SanityImageReference {
-  _type: 'image';
-  asset?: {
-    _ref: string;
-    _type: 'reference';
-  };
-}
-
-interface Post {
-  _id: string;
-  title?: string; // Make potentially missing fields optional
-  slug?: string;
-  publishedAt?: string;
-  mainImage?: SanityImageReference;
-  excerpt?: string;
-  author?: {
-    name?: string;
-  };
-}
+// Import shared types
+import type { Post, SanityImageReference } from '@/lib/types'; 
 
 // --- Data Fetching --- 
 async function fetchPublishedPosts(): Promise<Post[]> {
-  if (!client) {
-    console.error("Sanity client is not initialized.");
-    return [];
-  }
+  // We don't need the client directly here anymore unless for generateStaticParams if added
+  // if (!client) { ... }
+
   try {
-    // Fetch only posts with required fields defined (title, slug, _id)
-    // Ensure mainImage and its asset are fetched if mainImage exists
     const query = `
       *[
         _type == "post" && 
@@ -43,7 +21,7 @@ async function fetchPublishedPosts(): Promise<Post[]> {
       ] | order(publishedAt desc) {
         _id,
         title,
-        "slug": slug.current,
+        "slug": slug.current, // Fetch slug as object if needed by type, else just slug.current
         publishedAt,
         mainImage { 
           _type,
@@ -52,10 +30,18 @@ async function fetchPublishedPosts(): Promise<Post[]> {
         excerpt,
         author->{
           name
+        },
+        categories[]->{ // Add categories if needed
+          _id,
+          title
         }
       }
     `;
-    const posts: Post[] = await client.fetch(query);
+    // Use sanityFetch, providing the query and relevant tags for revalidation
+    const posts = await sanityFetch<Post[]>({ 
+      query,
+      tags: ['post'] // Tag requests for revalidation
+    });
     return posts || []; 
   } catch (error) {
     console.error("Failed to fetch Sanity posts:", error);
@@ -65,16 +51,25 @@ async function fetchPublishedPosts(): Promise<Post[]> {
 
 // --- Helper Function for Image URL (Optional but good practice) ---
 function getImageUrl(image: SanityImageReference | undefined | null): string | null {
-  // Robust check before calling urlForImage
-  if (image && image.asset && image._type === 'image') {
-    try {
-      return urlForImage(image).width(600).height(338).fit('crop').url();
-    } catch (e) {
-      console.error("Error generating image URL:", e);
-      return null; // Handle potential errors in urlForImage itself
-    }
+  // Return null early if image or asset is missing
+  if (!image || !image.asset || image._type !== 'image') {
+    return null;
   }
-  return null;
+  
+  // Now TypeScript knows image and image.asset are defined here
+  try {
+    // Use non-null assertion (!) since we've checked image and image.asset
+    // This explicitly tells TypeScript that 'image' is not null/undefined here.
+    const imageUrlData = urlForImage(image!); 
+
+    // The original urlForImage returns an object {src, width, height}
+    // We only need the src for this helper
+    return imageUrlData?.src || null; 
+
+  } catch (e) {
+    console.error("Error generating image URL:", e);
+    return null; // Handle potential errors in urlForImage itself
+  }
 }
 
 // --- Page Component --- 

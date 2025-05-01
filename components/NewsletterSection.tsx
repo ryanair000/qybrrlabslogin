@@ -1,7 +1,7 @@
 'use client'; // This component uses hooks, so it needs to be a client component
 
 import React, { useState } from 'react';
-import { useWeb3Forms } from "@web3forms/react";
+import useWeb3Forms from "@web3forms/react";
 
 // Define the Newsletter Section component
 export default function NewsletterSection() { // Export default

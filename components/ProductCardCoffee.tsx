@@ -1,22 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+// Import the shared Product type
+import type { Product } from '@/lib/types';
 
-// Placeholder type - adjust based on your actual product data
-type Product = {
-  id: string;
-  slug: string;
-  imageUrl: string;
-  title: string;
-  price: number;
-  discountedPrice?: number; // Price for members/discounted
-  inventoryTag?: string; // e.g., "Only 5 left"
-  currency?: string;
-};
+// Remove the local Product type definition
+/*
+type Product = { ... };
+*/
 
 // Props type for the component
 interface ProductCardCoffeeProps {
-  product: Product;
+  product: Product; // Use imported Product type
 }
 
 const ProductCardCoffee: React.FC<ProductCardCoffeeProps> = ({ product }) => {

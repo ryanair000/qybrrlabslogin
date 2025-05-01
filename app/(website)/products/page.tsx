@@ -5,9 +5,11 @@ import React from 'react';
 // import Header from "@/components/Header"; 
 // import Footer from "@/components/Footer";
 import ProductCardCoffee from '@/components/ProductCardCoffee'; // Import the new card
+// Import the shared Product type
+import type { Product } from '@/lib/types';
 
-// Placeholder data structure - Now empty as Socio will be rendered manually
-const placeholderProducts = [
+// Placeholder data structure - Now empty but typed
+const placeholderProducts: Product[] = [
   // Removed Socio product data
 ];
 
@@ -15,25 +17,13 @@ export default function ProductsPage() {
   // --- Filtering/Sorting logic would go here ---
   const products = placeholderProducts;
 
-  // Restore original return block
-  /* // Remove temporary test JSX
-  return (
-    <div>
-      <h1>Products Page Test</h1>
-      <p>If you see this, the basic component structure is fine.</p>
-    </div>
-  );
-  */
-
- // Original return block (uncommented)
+  // Original return block (uncommented)
   return (
     <div className="flex flex-col flex-grow"> 
-      {/* Remove Header rendering from the page */}
-      {/* <Header /> */}
+      {/* Removed Header comment */}
 
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {/* Optional: Add a page title here if desired */}
-        {/* <h1 className="text-2xl font-bold text-gray-900 mb-6">Our Products</h1> */}
+        {/* Removed Optional title comment */}
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-6">
@@ -61,13 +51,13 @@ export default function ProductsPage() {
               {/* Content Area */}            
               <div className="p-4 text-center flex-grow flex flex-col">
                 <h3 className="font-medium text-gray-900 truncate mb-2 flex-grow">
-                  {/* No inner link needed as the whole card is a link */}
+                  {/* Removed inner link comment */}
                   Socio - Snap, Caption, Share!
                 </h3>
                 {/* Price Section */}
                 <div className="mt-auto">
                   <p className="text-sm font-medium text-gray-900 mb-1">
-                    {/* Apply badge styling */}
+                    {/* Removed badge styling comment */}
                     <span className="inline-block bg-purple-100 text-purple-700 font-semibold px-3 py-1 rounded-full text-xs uppercase tracking-wider">
                       Free For Members
                     </span>
@@ -80,19 +70,12 @@ export default function ProductsPage() {
             </div>
           </a>
 
-          {/* Fallback message if needed (only shows if products array is empty AND Socio card wasn't added) */}
-          {/* {products.length === 0 && (
-            <p className="text-gray-500 col-span-full text-center py-10">
-              {/* Consider adjusting message if Socio is the only product expected */}
-              No products available yet.
-            </p>
-          )} */}
+          {/* Removed Fallback message comment block */}
         </div>
 
       </main>
 
-      {/* Remove Footer rendering from the page */}
-      {/* <Footer /> */}
+      {/* Removed Footer comment */}
     </div>
   ); // End of original return block 
 } 
