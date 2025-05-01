@@ -1,5 +1,5 @@
 import React from 'react';
-import { client, getPosts } from "@/lib/sanity/client"; // Assuming getPosts is defined here or we use client directly
+import { client } from "@/lib/sanity/client";
 import { urlForImage } from "@/lib/sanity/image";
 import Link from 'next/link'; // Import Link for navigation
 import Image from 'next/image'; // Import Next Image for optimization
