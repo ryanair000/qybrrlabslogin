@@ -65,13 +65,15 @@ export async function generateMetadata({ params }) {
 
 // Main Layout (remains async server component)
 export default function WebsiteLayout({ children }: { children: React.ReactNode }) {
-  const isDraftMode = draftMode().isEnabled;
+  // Only check draftMode status if not in production build
+  const isDraftMode = process.env.NODE_ENV !== 'production' && draftMode().isEnabled;
 
   return (
     <html lang="en" className={cx(inter.variable, firaCode.variable, "scroll-smooth")}>
       <body className="bg-white flex flex-col min-h-screen">
         <Header />
         <div className="flex-grow">
+          {/* Conditionally render LiveQueryProvider only in non-production draft mode */}
           {isDraftMode ? (
             <LiveQueryProvider client={client} token={token} logger={console}>
               {children}
@@ -82,6 +84,7 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
         </div>
         <Footer />
         <Analytics />
+        {/* Conditionally render VisualEditing only in non-production draft mode */}
         {isDraftMode && <VisualEditing />}
       </body>
     </html>
