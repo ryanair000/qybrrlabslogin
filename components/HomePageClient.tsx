@@ -97,10 +97,12 @@ export default function HomePageClient({ posts: initialPosts }: HomePageClientPr
             <div className="md:grid md:grid-cols-2 md:gap-12 items-center">
               {/* Image Area */}
               <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg mb-8 md:mb-0 order-last md:order-first">
-                 <img 
+                 <Image 
                   src="/socio.jpeg"
                   alt="Socio - Snap, Caption, Share!"
+                  fill
                   className="object-cover w-full h-full"
+                  sizes="(max-width: 767px) 100vw, 50vw"
                 />
               </div>
               {/* Content Area */}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image'; // Import next/image
 // Remove Header and Footer imports from the page file
 // import Header from "@/components/Header"; 
 // import Footer from "@/components/Footer";
@@ -41,11 +42,14 @@ export default function ProductsPage() {
           >
             <div className="relative bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
               {/* Image Area - Using socio.jpeg */}
-              <div className="aspect-w-1 aspect-h-1 bg-gray-100 flex items-center justify-center overflow-hidden">
-                <img 
+              <div className="relative aspect-w-1 aspect-h-1 bg-gray-100 overflow-hidden">
+                <Image 
                   src="/socio.jpeg"
                   alt="Socio - Snap, Caption, Share!"
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  fill // Use fill for responsive covering
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  // Add sizes prop for optimization if layout is complex
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </div>
               {/* Content Area */}            
