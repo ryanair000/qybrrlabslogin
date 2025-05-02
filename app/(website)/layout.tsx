@@ -76,6 +76,7 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
           {/* Removed conditional rendering based on draftMode */}
           {children}
         </div>
+        <NewsletterSection />
         <Footer />
         <Analytics />
         {/* Removed conditional VisualEditing component */}

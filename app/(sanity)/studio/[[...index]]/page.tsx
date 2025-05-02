@@ -12,8 +12,8 @@ import { NextStudio } from 'next-sanity/studio';
 // Imports the config from the root directory
 import config from '../../../../sanity.config';
 
-// Ensure the Studio route is statically generated
-export const dynamic = 'force-static';
+// Ensure the Studio route is dynamically generated
+export const dynamic = 'force-dynamic';
 
 // Removed the problematic re-export
 
