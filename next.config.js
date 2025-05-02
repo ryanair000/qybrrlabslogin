@@ -16,7 +16,7 @@ const nextConfig = {
     ignoreDuringBuilds: process.env.VERCEL_ENV === "production"
   },
   experimental: {
-    serverComponentsExternalPackages: ['framer-motion', '@sanity/preview-kit', 'next-sanity'],
+    serverComponentsExternalPackages: ['framer-motion'],
   },
 };
 
