@@ -29,7 +29,8 @@ export function Providers({ children }) {
 
     // Cleanup listener on component unmount
     return () => {
-      authListener?.unsubscribe();
+      // Call unsubscribe on the subscription object
+      authListener?.subscription?.unsubscribe();
     };
   }, [router]); // Add router to dependency array
 

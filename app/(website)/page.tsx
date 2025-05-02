@@ -23,7 +23,7 @@ async function fetchPublishedPosts(): Promise<Post[]> {
         publishedAt,
         mainImage { 
           _type,
-          asset->{_ref, _type} // Ensure asset is expanded
+          asset->{_ref, "_type": "reference"} // Explicitly set _type
         },
         excerpt,
         author->{
