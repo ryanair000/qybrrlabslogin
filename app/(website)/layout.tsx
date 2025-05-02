@@ -11,7 +11,7 @@ import { cx } from "@/utils/all";
 import { Inter, Fira_Code } from "next/font/google";
 import { draftMode } from 'next/headers';
 import { VisualEditing } from 'next-sanity';
-import LiveQueryProvider from 'next-sanity/preview';
+import { LiveQueryProvider } from 'next-sanity/preview';
 import { token, client } from "@/sanity/lib/client";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
