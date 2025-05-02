@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * This route is responsible for the built-in authoring environment using Sanity Studio v3.
  * All routes under /studio will be handled by this file using Next.js' catch-all routes:
